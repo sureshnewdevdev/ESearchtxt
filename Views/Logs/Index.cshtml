@@ -1,0 +1,79 @@
+@model LogsIndexViewModel
+@{
+    ViewData["Title"] = "Logs";
+}
+
+<section class="card">
+    <h2>Search Parameters</h2>
+    <form method="get" class="filters">
+        <label>
+            From
+            <input asp-for="Search.From" type="datetime-local" />
+        </label>
+        <label>
+            To
+            <input asp-for="Search.To" type="datetime-local" />
+        </label>
+        <label>
+            Level
+            <select asp-for="Search.Level" asp-items="Model.Search.LevelOptions"></select>
+        </label>
+        <label>
+            Application
+            <select asp-for="Search.Application" asp-items="Model.Search.ApplicationOptions"></select>
+        </label>
+        <label>
+            Event
+            <select asp-for="Search.EventName" asp-items="Model.Search.EventOptions"></select>
+        </label>
+        <label>
+            User Id
+            <select asp-for="Search.UserId" asp-items="Model.Search.UserOptions"></select>
+        </label>
+        <label class="full">
+            Message Contains
+            <input asp-for="Search.MessageContains" type="text" placeholder="example: Invalid column name" />
+        </label>
+        <label class="check full">
+            <input asp-for="Search.OnlyExceptions" />
+            Only exception/error logs
+        </label>
+        <div class="actions full">
+            <button type="submit">Search</button>
+            <a asp-action="Index">Reset</a>
+        </div>
+    </form>
+</section>
+
+<section class="card">
+    <h2>Results</h2>
+    <p><strong>@Model.FilteredEntries</strong> of <strong>@Model.TotalEntries</strong> log entries matched.</p>
+
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Level</th>
+                    <th>Application</th>
+                    <th>Event</th>
+                    <th>User</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var entry in Model.Results)
+                {
+                    <tr>
+                        <td>@entry.Timestamp</td>
+                        <td><span class="badge @entry.Level.ToLowerInvariant()">@entry.Level</span></td>
+                        <td>@entry.Application</td>
+                        <td>@(entry.EventName ?? "-")</td>
+                        <td>@(entry.UserId ?? "-")</td>
+                        <td><pre>@entry.Message</pre></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
