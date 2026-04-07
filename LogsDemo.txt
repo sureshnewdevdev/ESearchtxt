@@ -1,0 +1,255 @@
+2026-03-22 18:11:28.989 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:11:29.062 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:12:10.420 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:12:10.492 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:12:12.009 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 18:12:12.018 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 18:12:12.023 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 18:12:12.029 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 18:12:12.035 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 18:12:12.041 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 18:12:12.047 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 18:12:12.917 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 18:12:13.062 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 18:12:14.004 +05:30 [ERR] [Admin.API] Failed executing DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimAmount], [a].[ClaimId], [a].[ClaimNumber], [a].[CreatedAt], [a].[CustomerName], [a].[IncidentDate], [a].[PolicyId], [a].[PolicyNumber], [a].[Status], [a].[UpdatedAt], [a].[UserId]
+FROM [AdminClaims] AS [a]
+2026-03-22 18:12:14.055 +05:30 [ERR] [Admin.API] An exception occurred while iterating over the results of a query for context type 'SmartSure.Admin.Infrastructure.Data.AdminDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PolicyId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:29302d22-f622-4711-a08c-9bd8765074de
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PolicyId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:29302d22-f622-4711-a08c-9bd8765074de
+Error Number:207,State:1,Class:16
+2026-03-22 18:12:14.085 +05:30 [ERR] [Admin.API] Unhandled exception occurred: Invalid column name 'PolicyId'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'PolicyId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at SmartSure.Admin.Infrastructure.Repositories.AdminRepository`1.GetAllAsync() in D:\Sprint\SmartSure\backend\services\admin\SmartSure.Admin.Infrastructure\Repositories\AdminRepository.cs:line 21
+   at SmartSure.Admin.Application.Services.AdminClaimsService.GetClaimsAsync(String status, Nullable`1 fromDate, Nullable`1 userId, Int32 page, Int32 pageSize) in D:\Sprint\SmartSure\backend\services\admin\SmartSure.Admin.Application\Services\AdminClaimsService.cs:line 26
+   at SmartSure.Admin.API.Controllers.AdminClaimsController.GetClaims(String status, Nullable`1 fromDate, Nullable`1 userId, Int32 page, Int32 pageSize) in D:\Sprint\SmartSure\backend\services\admin\SmartSure.Admin.API\Controllers\AdminClaimsController.cs:line 23
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId:29302d22-f622-4711-a08c-9bd8765074de
+Error Number:207,State:1,Class:16
+2026-03-22 18:34:26.305 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:34:26.391 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:34:27.992 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 18:34:28.050 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 18:34:28.072 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 18:34:28.092 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 18:34:28.111 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 18:34:28.119 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 18:34:28.127 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 18:34:28.135 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 18:34:29.069 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 18:34:34.921 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 18:51:13.027 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:51:13.117 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 18:51:15.687 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 18:51:15.694 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 18:51:15.700 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 18:51:15.710 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 18:51:15.717 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 18:51:15.724 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 18:51:15.739 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 18:51:15.784 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 18:51:16.525 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 18:52:17.331 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 19:04:31.419 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 19:04:31.969 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 19:23:15.753 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8", NewRole: Policyholder
+2026-03-22 19:23:15.823 +05:30 [INF] [Admin.API] Updated Role to Policyholder for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8"
+2026-03-22 19:23:52.977 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8", NewRole: Admin
+2026-03-22 19:23:52.994 +05:30 [INF] [Admin.API] Updated Role to Admin for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8"
+2026-03-22 19:46:07.802 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 19:46:07.907 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 19:47:45.542 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 19:47:45.574 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 19:48:55.387 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 19:48:55.416 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 19:49:17.980 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0"
+2026-03-22 19:49:17.988 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0".
+2026-03-22 19:49:39.195 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 19:49:39.211 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 19:52:22.800 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 19:52:22.821 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 19:52:47.793 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 19:52:47.809 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 19:53:01.182 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 19:53:01.198 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 19:58:08.853 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "0be04a14-b4ab-47ac-a7d9-1cee8af3f95e"
+2026-03-22 19:58:08.915 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "0be04a14-b4ab-47ac-a7d9-1cee8af3f95e".
+2026-03-22 20:00:28.755 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0"
+2026-03-22 20:00:28.786 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0".
+2026-03-22 20:04:41.232 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8"
+2026-03-22 20:04:41.282 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8".
+2026-03-22 20:05:03.503 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8"
+2026-03-22 20:05:03.530 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8".
+2026-03-22 20:09:56.985 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 20:09:57.011 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 20:19:50.905 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "0be04a14-b4ab-47ac-a7d9-1cee8af3f95e"
+2026-03-22 20:19:50.950 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "0be04a14-b4ab-47ac-a7d9-1cee8af3f95e".
+2026-03-22 20:20:21.047 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 20:20:21.086 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 20:20:54.758 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 20:20:54.779 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 20:21:11.174 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0"
+2026-03-22 20:21:11.183 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "855fd739-9ad6-4d4c-8c02-54e7a24a5eb0".
+2026-03-22 20:21:42.733 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 20:21:42.766 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 20:31:45.394 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8", NewRole: Policyholder
+2026-03-22 20:31:45.432 +05:30 [INF] [Admin.API] Updated Role to Policyholder for UserId "7a55f2f4-99f4-4371-89ec-8b5f2c5f1fa8"
+2026-03-22 21:26:58.317 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 21:26:58.415 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 21:27:01.129 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 21:27:01.136 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 21:27:01.142 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 21:27:01.147 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 21:27:01.151 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 21:27:01.156 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 21:27:01.161 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 21:27:01.165 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 21:27:02.025 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 21:27:05.603 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 21:49:23.397 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 21:49:23.475 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 21:49:25.190 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 21:49:25.202 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 21:49:25.207 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 21:49:25.213 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 21:49:25.220 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 21:49:25.226 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 21:49:25.232 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 21:49:25.238 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 21:49:25.988 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 21:49:26.208 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 22:24:14.925 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 22:24:15.012 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 22:24:16.599 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 22:24:16.606 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 22:24:16.613 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 22:24:16.619 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 22:24:16.625 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 22:24:16.632 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 22:24:16.637 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 22:24:16.643 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 22:24:17.561 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 22:24:51.918 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 22:25:24.181 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:25:24.917 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:26:34.694 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:26:34.721 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:27:26.606 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307", NewRole: Policyholder
+2026-03-22 22:27:26.626 +05:30 [INF] [Admin.API] Updated Role to Policyholder for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:27:41.953 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:27:41.983 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 22:30:54.108 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:30:54.139 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:33:50.117 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:33:50.135 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:34:03.822 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307", NewRole: Admin
+2026-03-22 22:34:03.845 +05:30 [INF] [Admin.API] Updated Role to Admin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:34:46.230 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:34:46.255 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 22:34:55.947 +05:30 [INF] [Admin.API] Received UserRoleChangedEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307", NewRole: Policyholder
+2026-03-22 22:34:55.956 +05:30 [INF] [Admin.API] Updated Role to Policyholder for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:35:05.554 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:35:05.576 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 22:39:05.640 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:39:05.678 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:41:09.814 +05:30 [INF] [Admin.API] Received ClaimStatusChangedEvent: ClaimId 2 status updated to Under Review
+2026-03-22 22:41:09.832 +05:30 [INF] [Admin.API] Updated mirrored ClaimId 2 status to Under Review.
+2026-03-22 22:41:22.521 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:41:22.550 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 22:45:15.156 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:45:15.217 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:45:54.105 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 22:45:54.138 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 22:59:19.956 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 22:59:20.049 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 22:59:22.140 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 22:59:22.151 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 22:59:22.157 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 22:59:22.165 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 22:59:22.172 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 22:59:22.180 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 22:59:22.187 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 22:59:22.195 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 22:59:23.214 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 22:59:23.521 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 22:59:24.749 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 22:59:41.702 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 23:00:04.372 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307"
+2026-03-22 23:00:04.437 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "1076afe2-801c-42ec-9494-eaf52fa0f307".
+2026-03-22 23:12:10.094 +05:30 [INF] [Admin.API] Received UserLoggedInEvent for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9"
+2026-03-22 23:12:10.192 +05:30 [INF] [Admin.API] Updated LastLogin for UserId "4c75ee9b-53f7-43ca-8fbc-3ce6b7ddc8b9".
+2026-03-22 23:13:28.405 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 23:13:28.487 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 23:13:29.917 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 23:13:29.925 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 23:13:29.931 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 23:13:29.937 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 23:13:29.942 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 23:13:29.947 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 23:13:29.953 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 23:13:29.958 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 23:13:30.839 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
+2026-03-22 23:13:36.884 +05:30 [WRN] [Admin.API] Failed to determine the https port for redirect.
+2026-03-22 23:58:27.040 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'ClaimAmount' on entity type 'AdminClaim'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 23:58:27.121 +05:30 [WRN] [Admin.API] No store type was specified for the decimal property 'PremiumAmount' on entity type 'AdminPolicy'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-03-22 23:58:28.697 +05:30 [INF] [Admin.API] Configured endpoint claim-approved, Consumer: SmartSure.Admin.Application.Consumers.ClaimApprovedConsumer
+2026-03-22 23:58:28.707 +05:30 [INF] [Admin.API] Configured endpoint claim-rejected, Consumer: SmartSure.Admin.Application.Consumers.ClaimRejectedConsumer
+2026-03-22 23:58:28.713 +05:30 [INF] [Admin.API] Configured endpoint claim-status-changed, Consumer: SmartSure.Admin.Application.Consumers.ClaimStatusChangedConsumer
+2026-03-22 23:58:28.720 +05:30 [INF] [Admin.API] Configured endpoint claim-submitted, Consumer: SmartSure.Admin.Application.Consumers.ClaimSubmittedConsumer
+2026-03-22 23:58:28.726 +05:30 [INF] [Admin.API] Configured endpoint policy-created, Consumer: SmartSure.Admin.Application.Consumers.PolicyCreatedConsumer
+2026-03-22 23:58:28.733 +05:30 [INF] [Admin.API] Configured endpoint user-logged-in, Consumer: SmartSure.Admin.Application.Consumers.UserLoggedInConsumer
+2026-03-22 23:58:28.739 +05:30 [INF] [Admin.API] Configured endpoint user-registered, Consumer: SmartSure.Admin.Application.Consumers.UserRegisteredConsumer
+2026-03-22 23:58:28.744 +05:30 [INF] [Admin.API] Configured endpoint user-role-changed, Consumer: SmartSure.Admin.Application.Consumers.UserRoleChangedConsumer
+2026-03-22 23:58:29.752 +05:30 [INF] [Admin.API] Bus started: "rabbitmq://localhost/"
