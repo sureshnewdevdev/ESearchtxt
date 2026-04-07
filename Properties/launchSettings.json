@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "ESearchtxt": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53030;http://localhost:53031"
+    }
+  }
+}
